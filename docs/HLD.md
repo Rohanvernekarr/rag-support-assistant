@@ -24,14 +24,17 @@ The system is a Retrieval-Augmented Generation (RAG) assistant designed to:
 
 | Component | Technology | Description |
 | :--- | :--- | :--- |
-| **Document Loader** | `PyPDFLoader` | Extracts text and metadata from PDF files. |
-| **Chunking Strategy** | `RecursiveCharacterTextSplitter` | Breaks documents into 1000-character chunks with 200-character overlap to maintain context. |
-| **Embedding Model** | `all-MiniLM-L6-v2` | A lightweight HuggingFace model used to convert text chunks into numerical vectors. |
-| **Vector Store** | `ChromaDB` | A high-performance, local vector database for storing and searching embeddings. |
-| **Retriever** | `VectorStoreRetriever` | Searches ChromaDB for the Top-3 most relevant chunks using cosine similarity. |
-| **LLM** | `Llama-3.3-70b-versatile` | Hosted on Groq for ultra-low latency inference. |
-| **Workflow Engine** | `LangGraph` | Manages the state and transition logic between retrieval, generation, and escalation. |
-| **HITL Module** | `human_escalation` | Simulates escalation by flagging low-confidence queries for human review. |
+| **User Interface** | CLI / Web App | The entry point where users interact with the assistant. |
+| **PDF Documents** | Data Source | The raw knowledge base files used for the RAG system. |
+| **PyPDFLoader** | Document Loader | Extracts text and metadata from PDF files. |
+| **Text Chunking** | `RecursiveCharacterTextSplitter` | Breaks documents into 1000-character chunks with overlap. |
+| **Embedding System** | `HuggingFaceEmbeddings` | Converts text chunks into numerical vectors (embeddings). |
+| **Vector Database** | `ChromaDB` | Stores and indexes embeddings for semantic search. |
+| **LangGraph Orchestration** | `LangGraph` | Manages the stateful logic and flow between components. |
+| **Retrieval Layer** | Vector Search | Fetches relevant document chunks from the vector database. |
+| **LLM Processing Layer** | `Groq API (Llama 3)` | Generates natural language responses based on context. |
+| **Confidence Check** | Logic Router | Evaluates if the LLM response is grounded in the context. |
+| **Human-in-the-Loop** | HITL System | An escalation path for low-confidence or complex queries. |
 
 ---
 
