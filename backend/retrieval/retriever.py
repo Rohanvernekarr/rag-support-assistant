@@ -1,4 +1,4 @@
-from langchain.vectorstores import Chroma
+from langchain_chroma import Chroma
 from backend.ingestion.embedder import get_embedding_model
 
 def get_retriever():
