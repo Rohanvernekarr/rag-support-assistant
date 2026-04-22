@@ -7,7 +7,7 @@ def retrieve_node(state):
 
     question = state["question"]
 
-    docs = retriever.get_relevant_documents(question)
+    docs = retriever.invoke(question)
 
     return {
         "documents": docs
