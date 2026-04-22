@@ -13,7 +13,7 @@ def generate_answer(context, question):
     prompt = f"""
 You are a customer support assistant.
 
-Use the provided context to answer the question.
+Use the provided context to answer the question. If the context is not sufficient to answer the question, strictly say: "I don't know the answer based on the provided context."
 
 Context:
 {context}

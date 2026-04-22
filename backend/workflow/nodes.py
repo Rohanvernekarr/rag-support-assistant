@@ -23,7 +23,11 @@ def generate_node(state):
 
     answer = generate_answer(context, question)
 
-    confidence = 0.9 if docs else 0.3
+    # Trigger escalation if LLM cannot find answer in context
+    if "I don't know" in answer or not docs:
+        confidence = 0.3
+    else:
+        confidence = 0.9
 
     return {
         "answer": answer,
