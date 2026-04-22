@@ -9,7 +9,7 @@ Every day, customer support teams are flooded with the same repetitive questions
 - **Inaccurate guesses** when users try to find info themselves.
 
 ## The Solution
-We built an intelligent **Retrieval-Augmented Generation (RAG)** system that acts as a 24/7 first-line support agent. 
+I built an intelligent **Retrieval-Augmented Generation (RAG)** system that acts as a 24/7 first-line support agent. 
 
 ### How it works:
 1. **Knowledge Ingestion**: The system reads your official support PDFs and breaks them into smart "chunks."
